@@ -7,16 +7,44 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="dark-mode">
 
     <div class="glass-container">
         <header>
-            <h1>Mis Tareas</h1>
+            <div class="header-top">
+                <h1>Mis Tareas</h1>
+                <button id="theme-toggle" aria-label="Cambiar tema">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+            </div>
             <p id="date-display"></p>
         </header>
 
+        <div id="stats-container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span class="stat-number" id="total-count">0</span>
+                    <span class="stat-label">Creadas</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number" id="pending-count">0</span>
+                    <span class="stat-label">Pendientes</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number" id="completed-count">0</span>
+                    <span class="stat-label">Completadas</span>
+                </div>
+            </div>
+            <div class="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+        </div>
+
         <form id="task-form">
-            <input type="text" id="task-input" placeholder="Añadir una nueva tarea..." required autocomplete="off">
+            <div class="input-group">
+                <input type="text" id="task-input" placeholder="Añadir una nueva tarea..." required autocomplete="off">
+                <input type="datetime-local" id="task-date" required>
+            </div>
             <button type="submit" id="add-btn"><i class="fa-solid fa-plus"></i></button>
         </form>
 
